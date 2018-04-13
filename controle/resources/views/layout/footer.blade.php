@@ -1,0 +1,7 @@
+@extends(layout.layout)
+
+@section('footer')
+<footer class="container">
+    <p>&copy; Company 2017-2018</p>
+  </footer>
+@endsection
