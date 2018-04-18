@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('layout.index');
 });
 
-Route::get('about', function () {
-    return view('about');
+Route::get('corista', function () {
+    return view('corista.index');
 });
