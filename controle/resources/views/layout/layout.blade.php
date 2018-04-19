@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Supremo Encanto</title>
+    <title>@yield('title') - Supremo Encanto</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,38 +30,7 @@
         <!--END BACK TO TOP-->
         @include('partials.nav')
         <div id="wrapper">
-            <!--BEGIN SIDEBAR MENU-->
-            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-                data-position="right" class="navbar-default navbar-static-side">
-            <div class="sidebar-collapse menu-scroll">
-                <ul id="side-menu" class="nav">
-                    
-                     <div class="clearfix"></div>
-                    <li class="active"><a href="/"><i class="fa fa-home fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Home</span></a></li>
-                    <li><a href="corista"><i class="fa fa-group fa-fw">
-                        <div class="icon-bg bg-pink"></div>
-                    </i><span class="menu-title">Coristas</span></a>
-                       
-                    </li>
-                    <li><a href="#"><i class="fa fa-list-alt fa-fw">
-                        <div class="icon-bg bg-green"></div>
-                    </i><span class="menu-title">Chamada</span></a>
-                       
-                    </li>
-                    
-                    <li><a href="#"><i class="fa fa-money fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Finanças</span></a>
-                       
-                    </li>
-                    <li><a href="#"><i class="fa fa-music fa-fw">
-                        <div class="icon-bg bg-green"></div>
-                    </i><span class="menu-title">Ensaios</span></a></li>
-                </ul>
-            </div>
-        </nav>
+            @include('partials.sidebar')
           
           
             <div id="page-wrapper">

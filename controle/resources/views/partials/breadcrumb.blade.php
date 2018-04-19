@@ -2,12 +2,20 @@
 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
 	<div class="page-header pull-left">
 		<div class="page-title">
-			Layout</div>
+			@yield('title')
+		</div>
 	</div>
 	<ol class="breadcrumb page-breadcrumb pull-right">
-		<li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-		<li class="hidden"><a href="#">Layout</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-		<li class="active">Layout</li>
+		<li><i class="fa fa-home"></i>&nbsp;<a href="/">Home</a>&nbsp;<i class="fa fa-angle-right"></i></li>
+		@for($i = 0; $i <= count(Request::segments()); $i++)
+		<li>
+		  <a href="" style="text-transform:  capitalize;">{{Request::segment($i)}}</a>
+		  @if($i < count(Request::segments()) & $i > 0)
+			{!!'&nbsp;<i class="fa fa-angle-right"></i>'!!}
+		  @endif
+		</li>
+		@endfor
+		
 	</ol>
 	<div class="clearfix">
 	</div>

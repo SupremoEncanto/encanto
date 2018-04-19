@@ -1,5 +1,7 @@
 @extends('layout.layout')
 
+@section('title', 'Home')
+
 @section('content')
 <div class="jumbotron">
   <div class="container">
