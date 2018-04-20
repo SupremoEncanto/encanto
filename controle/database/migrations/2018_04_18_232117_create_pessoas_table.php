@@ -18,6 +18,9 @@ class CreatePessoasTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('aniversario');
+            $table->string('ramal');
+            $table->string('telefone');
+            $table->string('setor');
             $table->timestamps();
         });
     }
