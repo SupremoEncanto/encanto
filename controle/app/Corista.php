@@ -14,6 +14,11 @@ class Corista extends Model
 
     public function pessoas()
     {
-        return $this->belongsTo('App\Pessoa');
+        return $this->belongsTo(Pessoa::class, 'pessoa_id');
+    }
+
+    public function naipe()
+    {
+        return $this->hasOne(Naipe::class);
     }
 }
