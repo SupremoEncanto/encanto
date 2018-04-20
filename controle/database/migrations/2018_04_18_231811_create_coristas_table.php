@@ -14,8 +14,17 @@ class CreateCoristasTable extends Migration
     public function up()
     {
         Schema::create('coristas', function (Blueprint $table) {
+
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
+            $table->integer('pessoa_id')->unsigned();
+            $table->date('joined_at');
+            $table->date('left_on');
+            $table->tinyInteger('naipe', false, true)->length(2);
             $table->timestamps();
+
+            
         });
     }
 
