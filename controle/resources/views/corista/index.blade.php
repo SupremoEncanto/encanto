@@ -18,34 +18,17 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach ($coristas as $corista) 
                 <tr>
-                    <td>1</td>
-                    <td><a href="#">Claudia</a></td>
+                    <td>{{ $corista->id }}</td>
+                    <td>
+                        <a href="{{ url('/coristas', $corista->id) }}">{{ $corista->pessoas->name }}</a>
+                    </td>
                     <td>4179</td>
-                    <td>claudiave@stf.jus.br</td>
-                    <td>Soprano</td>
+                    <td>{{  $corista->pessoas->email  }}</td>
+                <td>{{  $corista->naipe  }}</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="#">Divina Célia</a></td>
-                    <td>3152</td>
-                    <td>divina@stf.jus.br</td>
-                    <td>Contralto</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="#">Geancarlo Vinhal</a></td>
-                    <td>3958</td>
-                    <td>geancarlo.vinhal@stf.jus.br</td>
-                    <td>Baixo</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><a href="#">Vitor Fortuna</a></td>
-                    <td>3909</td>
-                    <td>vitor.fortuna@stf.jus.br</td>
-                    <td>Tenor</td>
-                </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

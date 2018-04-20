@@ -4,6 +4,4 @@ Route::get('/', function () {
     return view('layout.index');
 });
 
-Route::get('corista', function () {
-    return view('corista.index');
-});
+Route::get('corista', 'CoristaController@index');
