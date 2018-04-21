@@ -8,6 +8,6 @@ class Naipe extends Model
 {
     public function coristas()
     {
-        return $this->belongsToMany(Corista::class);
+        return $this->hasMany(Corista::class);
     }
 }

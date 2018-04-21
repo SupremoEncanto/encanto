@@ -17,8 +17,8 @@ class Corista extends Model
         return $this->belongsTo(Pessoa::class, 'pessoa_id');
     }
 
-    public function naipe()
+    public function naipes()
     {
-        return $this->hasOne(Naipe::class);
+        return $this->belongsTo(Naipe::class, 'naipe_id');
     }
 }

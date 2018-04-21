@@ -15,7 +15,7 @@ class Pessoa extends Model
 
     public function coristas()
     {
-        return $this->hasOne('App\Corista');
+        return $this->hasOne(Corista::class);
     }
 
     public function users()

@@ -29,6 +29,6 @@ class User extends Authenticatable
 
     public function pessoas()
     {
-        return $this->belongsTo('App\Pessoa');
+        return $this->belongsTo(Pessoa::class);
     }
 }
