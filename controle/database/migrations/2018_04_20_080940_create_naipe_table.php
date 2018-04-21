@@ -13,9 +13,8 @@ class CreateNaipeTable extends Migration
      */
     public function up()
     {
-        Schema::create('naipe', function (Blueprint $table) {
+        Schema::create('naipes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('corista_id')->unsigned();
             $table->string('naipe');
             $table->timestamps();
         });

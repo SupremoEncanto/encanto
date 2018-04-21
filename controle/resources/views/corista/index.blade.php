@@ -24,9 +24,9 @@
                     <td>
                         <a href="{{ url('/coristas', $corista->id) }}">{{ $corista->pessoas->name }}</a>
                     </td>
-                    <td>4179</td>
+                    <td>{{  $corista->pessoas->ramal  }}</td>
                     <td>{{  $corista->pessoas->email  }}</td>
-                <td>{{  $corista->naipe  }}</td>
+                <td>{{  $corista->naipes->naipe  }}</td>
                 </tr>
                 @endforeach
                 </tbody>

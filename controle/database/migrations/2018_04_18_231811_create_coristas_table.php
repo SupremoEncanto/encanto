@@ -20,8 +20,8 @@ class CreateCoristasTable extends Migration
             $table->increments('id');
             $table->integer('pessoa_id')->unsigned();
             $table->date('joined_at');
-            $table->date('left_on');
-            $table->tinyInteger('naipe', false, true)->length(2);
+            $table->date('left_on')->nullable();
+            $table->tinyInteger('naipe_id', false, true)->length(2);
             $table->timestamps();
 
             

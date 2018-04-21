@@ -12,7 +12,7 @@ class CoristaController extends Controller
     public function index ()
     {
 
-      $coristas = Corista::with('pessoas')->get();
+      $coristas = Corista::with('pessoas', 'naipes')->get();
 
       return view('corista.index', compact('coristas'));
     }
