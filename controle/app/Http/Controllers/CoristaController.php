@@ -21,7 +21,7 @@ class CoristaController extends Controller
     {
       //$corista = Corista::where('id', $id)->firstOrFail();
 
-      return view('coristas.show', compact('corista'));
+      return view('corista.show', compact('corista'));
     }
 
     public function create ()
@@ -33,14 +33,14 @@ class CoristaController extends Controller
     {
       Corista::create($requisicao->all());
 
-      return redirect('cosristas');
+      return redirect('coristas');
     }
 
     public function edit ($id)
     {
       $corista = Corista::findOrFail($id);
     
-      return view('coristas.edit', compact('corista'));
+      return view('corista.edit', compact('corista'));
     }
 
     public function update ($id, CoristaRequest $requisicao)
