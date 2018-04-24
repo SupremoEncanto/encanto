@@ -8,7 +8,7 @@ data-position="right" class="navbar-default navbar-static-side">
     <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="/"><i class="fa fa-home fa-fw">
         <div class="icon-bg bg-orange"></div>
     </i><span class="menu-title">Home</span></a></li>
-    <li {{{ (Request::is('coristas') ? 'class=active' : '') }}}><a href="{{ url('coristas')  }}"><i class="fa fa-group fa-fw">
+    <li {{{ (Request::is('coristas') ? 'class=active' : '') }}}{{{ (Request::is('coristas/*') ? 'class=active' : '') }}}><a href="{{ url('coristas')  }}"><i class="fa fa-group fa-fw">
         <div class="icon-bg bg-pink"></div>
     </i><span class="menu-title">Coristas</span></a>
        
