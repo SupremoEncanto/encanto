@@ -21,6 +21,7 @@ class CreatePessoasTable extends Migration
             $table->string('ramal');
             $table->string('telefone');
             $table->string('setor');
+            $table->string('avatar');
             $table->timestamps();
         });
     }
