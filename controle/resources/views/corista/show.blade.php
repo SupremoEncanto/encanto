@@ -23,7 +23,7 @@
     <div class="row mtl">
         <div class="col-md-3">
             <div class="form-group">
-                <div class="text-center mbl"><img src="http://lorempixel.com/640/480/business/1/" alt="" class="img-responsive"/></div>
+                <div class="text-center mbl"><img src="{{URL::asset('resources/assets/img/download.jpeg')}}" alt="" class="img-responsive"/></div>
                 <div class="text-center mbl"><a href="#" class="btn btn-green"><i class="fa fa-upload"></i>&nbsp;
                     Upload</a></div>
             </div>
