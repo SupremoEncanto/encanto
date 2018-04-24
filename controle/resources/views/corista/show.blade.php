@@ -19,11 +19,10 @@
                 
           <div class="row">
 <div class="col-md-12"><h2>Perfil: {{ $corista->pessoas->name }}</h2>
-
     <div class="row mtl">
         <div class="col-md-3">
             <div class="form-group">
-                <div class="text-center mbl"><img src="{{URL::asset('resources/assets/img/download.jpeg')}}" alt="" class="img-responsive"/></div>
+                <div class="text-center mbl"><img src="{{URL::asset('resources/assets/img/')}}/{{ $corista->pessoas->avatar }}" alt="" class="img-responsive"/></div>
                 <div class="text-center mbl"><a href="#" class="btn btn-green"><i class="fa fa-upload"></i>&nbsp;
                     Upload</a></div>
             </div>
