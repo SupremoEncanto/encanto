@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $corista->id }}</td>
                     <td>
-                        <a href="{{ url('/coristas', $corista->pessoas->name) }}">{{ $corista->pessoas->name }}</a>
+                        <a href="{{ url('/coristas', $corista->id) }}">{{ $corista->pessoas->name }}</a>
                     </td>
                     <td>{{  $corista->pessoas->ramal  }}</td>
                     <td>{{  $corista->pessoas->email  }}</td>
