@@ -21,4 +21,9 @@ class Corista extends Model
     {
         return $this->belongsTo(Naipe::class, 'naipe_id');
     }
+
+    public function chamadas()
+    {
+        return $this->hasMany(Chamada::class);
+    }
 }
