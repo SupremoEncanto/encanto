@@ -70,6 +70,7 @@ CREATE TABLE `pessoas` (
 	`ramal` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`telefone` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`setor` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+	`avatar` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	PRIMARY KEY ( `id` ) )
 CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci
@@ -138,11 +139,11 @@ INSERT INTO `migrations`(`id`,`migration`,`batch`) VALUES ( '5', '2018_04_20_080
 
 
 -- Dump data of "pessoas" ----------------------------------
-INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`created_at`,`updated_at`) VALUES ( '1', 'Claudia', 'claudia@stf.jus.br', '04/12', '4521', '3217-3000', 'Remoto', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
-INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`created_at`,`updated_at`) VALUES ( '2', 'Divina Célia', 'divina@stf.jus.br', '04/12', '4521', '3217-3000', 'SDO', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
-INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`created_at`,`updated_at`) VALUES ( '3', 'Geancarlo', 'geancarlo@stf.jus.br', '04/12', '4521', '3217-3000', 'STI/CESO', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
-INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`created_at`,`updated_at`) VALUES ( '4', 'Vitor', 'vitor@stf.jus.br', '04/12', '4521', '3217-3000', 'STI/CINT', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
-INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`created_at`,`updated_at`) VALUES ( '5', 'Ana Valéria', 'ana.valeria@stf.jus.br', '04/12', '4521', '3217-3000', 'SDO', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
+INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`avatar`,`created_at`,`updated_at`) VALUES ( '1', 'Claudia', 'claudia@stf.jus.br', '04/12', '4521', '3217-3000', 'Remoto', 'download.jpeg','2018-04-21 06:18:40', '2018-04-21 06:18:40' );
+INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`avatar`,`created_at`,`updated_at`) VALUES ( '2', 'Divina Célia', 'divina@stf.jus.br', '04/12', '4521', '3217-3000', 'SDO','download2.jpeg', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
+INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`avatar`,`created_at`,`updated_at`) VALUES ( '3', 'Geancarlo', 'geancarlo@stf.jus.br', '04/12', '4521', '3217-3000', 'STI/CESO','NULL', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
+INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`avatar`,`created_at`,`updated_at`) VALUES ( '4', 'Vitor', 'vitor@stf.jus.br', '04/12', '4521', '3217-3000', 'STI/CINT','NULL', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
+INSERT INTO `pessoas`(`id`,`name`,`email`,`aniversario`,`ramal`,`telefone`,`setor`,`avatar`,`created_at`,`updated_at`) VALUES ( '5', 'Ana Valéria', 'ana.valeria@stf.jus.br', '04/12', '4521', '3217-3000', 'SDO','NULL', '2018-04-21 06:18:40', '2018-04-21 06:18:40' );
 -- ---------------------------------------------------------
 
 
