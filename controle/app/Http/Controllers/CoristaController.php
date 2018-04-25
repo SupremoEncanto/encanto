@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Corista;
 use App\Pessoa;
-//use catalogo\Http\Requests\AreaRequest;
 
 class CoristaController extends Controller
 {
@@ -17,7 +16,7 @@ class CoristaController extends Controller
       return view('corista.index', compact('coristas'));
     }
 
-    public function show (Corista $corista)
+    public function show (Pessoa $pessoa)
     {
       //$corista = Corista::where('id', $id)->firstOrFail();
 
