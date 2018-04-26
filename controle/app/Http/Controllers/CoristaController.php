@@ -17,13 +17,7 @@ class CoristaController extends Controller
     }
 
     public function show (Corista $corista)
-    //public function show ($nome)
     {
-      //$pessoa = Pessoa::where('name', $nome)->get();
-
-      //$pessoa = Pessoa::first();
-      
-      //$corista = Corista::where('pessoa_id', $pessoa->id)->get();
 
       return view('corista.show', compact('corista'));
     }
