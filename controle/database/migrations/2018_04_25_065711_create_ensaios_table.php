@@ -16,7 +16,7 @@ class CreateEnsaiosTable extends Migration
         Schema::create('ensaios', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->boolean('regular');
+            $table->boolean('regular')->nullable;
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ data-position="right" class="navbar-default navbar-static-side">
     </i><span class="menu-title">Coristas</span></a>
        
     </li>
-    <li {{{ (Request::is('chamada') ? 'class=active' : '') }}}><a href="#"><i class="fa fa-list-alt fa-fw">
+    <li {{{ (Request::is('chamada') ? 'class=active' : '') }}}><a href="chamada"><i class="fa fa-list-alt fa-fw">
         <div class="icon-bg bg-green"></div>
     </i><span class="menu-title">Chamada</span></a>
        
