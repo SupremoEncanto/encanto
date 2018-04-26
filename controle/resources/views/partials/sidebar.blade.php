@@ -13,20 +13,21 @@ data-position="right" class="navbar-default navbar-static-side">
     </i><span class="menu-title">Coristas</span></a>
        
     </li>
-    <li {{{ (Request::is('chamada') ? 'class=active' : '') }}}><a href="chamada"><i class="fa fa-list-alt fa-fw">
+    <li {{{ (Request::is('chamada') ? 'class=active' : '') }}}{{{ (Request::is('chamada/*') ? 'class=active' : '') }}}><a href="{{ url('chamada')  }}"><i class="fa fa-list-alt fa-fw">
         <div class="icon-bg bg-green"></div>
     </i><span class="menu-title">Chamada</span></a>
        
     </li>
-    
+    <li {{{ (Request::is('ensaios') ? 'class=active' : '') }}}{{{ (Request::is('ensaios/*') ? 'class=active' : '') }}}><a href="{{ url('ensaios')  }}"><i class="fa fa-music fa-fw">
+        <div class="icon-bg bg-green"></div>
+    </i><span class="menu-title">Ensaios</span></a>
+
+    </li>
     <li {{{ (Request::is('financas') ? 'class=active' : '') }}}><a href="#"><i class="fa fa-money fa-fw">
         <div class="icon-bg bg-orange"></div>
     </i><span class="menu-title">Finanças</span></a>
        
     </li>
-    <li {{{ (Request::is('ensaios') ? 'class=active' : '') }}}><a href="#"><i class="fa fa-music fa-fw">
-        <div class="icon-bg bg-green"></div>
-    </i><span class="menu-title">Ensaios</span></a></li>
 </ul>
 </div>
 </nav>

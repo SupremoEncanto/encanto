@@ -6,7 +6,11 @@ Route::get('/', function () {
 
 Route::get('coristas', 'CoristaController@index');
 Route::get('coristas/{corista}', 'CoristaController@show');
+Route::get('ensaios', 'EnsaioController@index');
+Route::get('ensaios/{ensaio}', 'EnsaioController@show');
+
 Route::get('chamada', 'ChamadaController@index');
+
 
 Route::get('/resources/assets/img/{filename}', function($filename){
     $path = resource_path() . '/assets/img/' . $filename;
