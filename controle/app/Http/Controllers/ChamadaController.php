@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ensaio;
+use App\Chamada;
 
 class ChamadaController extends Controller
 {
     public function index ()
     {
 
-      $coristas = Corista::with('pessoas', 'naipes', 'chamadas')->get();
+      $ensaios = Ensaio::with('chamadas')->get();
 
-      return view('chamada.index', compact('coristas'));
+      return view('chamada.index', compact('ensaios'));
     }
 }
