@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ensaio;
 use App\Chamada;
 use App\Corista;
+use App\Pessoa;
 use DB;
 
 class EnsaioController extends Controller
@@ -22,15 +23,12 @@ class EnsaioController extends Controller
 
         $ensaio = Ensaio::where('id', $id)->with('chamadas')->firstOrFail();
 
-        //$chamadas = Chamada::where('ensaio_id', $id)->get();
-
-        //$coristas = Corista::whereIn('id', $chamadas)->with('pessoas')->get();
-        $pessoas = DB::table('pessoas')
+        $pessoas = Pessoa::with('coristas', 'coristas.naipes', 'coristas.chamadas', 'coristas.chamadas.ensaios')
             ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
             ->join('chamadas', 'coristas.id', '=', 'chamadas.corista_id')
             ->join('naipes', 'coristas.naipe_id', '=', 'naipes.id')
             ->join('ensaios', 'chamadas.ensaio_id', '=', 'ensaios.id')
-            ->select('pessoas.*')
+            ->select('pessoas.*', 'naipes.naipe')
             ->where('ensaios.id', $id)
             ->get();
 

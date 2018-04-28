@@ -1,18 +1,18 @@
 @extends('layout.layout')
 
-@section('title', 'Chamada')
+@section('title', 'Ensaios')
 
 @section('content')
 <div class="col-lg-12">
     <div class="panel panel-grey">
-        <div class="panel-heading">Ensaio do dia  {{ $ensaio->date }}<span class="pull-right"><i class="fa fa-plus"></i>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;<i class="fa fa-save"></i></span></div>
+        <div class="panel-heading">Ensaio do dia  {{ Carbon\Carbon::parse($ensaio->date)->toFormattedDateString() }}<span class="pull-right"><i class="fa fa-plus"></i>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;<i class="fa fa-save"></i></span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Corista</th>
-                    <th>Presença</th>
+                    <th>Naipe</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,7 +20,7 @@
                 <tr>
                 <td>{{ $pessoa->id }}</td>
                 <td>{{ $pessoa->name }}</td>
-                <td>Presente</td>
+                <td>{{ $pessoa->coristas->naipes->naipe }}</td>
                 </tr>
                 @endforeach
                 </tbody>
