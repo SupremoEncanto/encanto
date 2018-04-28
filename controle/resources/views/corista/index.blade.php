@@ -14,6 +14,9 @@
                     <th>Corista</th>
                     <th>Ramal</th>
                     <th>E-mail</th>
+                    <th>Setor</th>
+                    <th>Telefone</th>
+                    <th>Aniversário</th>
                     <th>Naipe</th>
                 </tr>
                 </thead>
@@ -26,6 +29,9 @@
                     </td>
                     <td>{{  $corista->pessoas->ramal  }}</td>
                     <td>{{  $corista->pessoas->email  }}</td>
+                    <td>{{  $corista->pessoas->setor  }}</td>
+                    <td>{{  $corista->pessoas->telefone  }}</td>
+                    <td>{{  $corista->pessoas->aniversario  }}</td>
                 <td>{{  $corista->naipes->naipe  }}</td>
                 </tr>
                 @endforeach
