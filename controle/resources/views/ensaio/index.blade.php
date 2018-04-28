@@ -19,7 +19,7 @@
                 <tr>
                 <td>{{ $ensaio->id }}</td>
                 <td>
-                    <a href="{{ url('/ensaios', $ensaio->id) }}"> {{ $ensaio->date }}</a>
+                    <a href="{{ url('/ensaios', $ensaio->id) }}"> {{ Carbon\Carbon::parse($ensaio->date)->format('d/m/Y') }}</a>
                 </td>
                 </tr>
                 @endforeach
