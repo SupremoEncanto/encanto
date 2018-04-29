@@ -10,7 +10,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>Avatar</th>
                     <th>Corista</th>
                     <th>Naipe</th>
                 </tr>
@@ -18,7 +18,7 @@
                 <tbody>
                 @foreach ($pessoas as $pessoa) 
                 <tr>
-                <td>{{ $pessoa->id }}</td>
+                <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
                 <td>{{ $pessoa->name }}</td>
                 <td>{{ $pessoa->coristas->naipes->naipe }}</td>
                 </tr>
