@@ -4,6 +4,8 @@ Route::get('/', function () {
     return view('layout.index');
 });
 
+Route::get('pessoas', 'PessoaController@index');
+Route::get('pessoas/{pessoa}', 'PessoaController@show');
 Route::get('coristas', 'CoristaController@index');
 Route::get('coristas/{corista}', 'CoristaController@show');
 Route::get('ensaios', 'EnsaioController@index');
