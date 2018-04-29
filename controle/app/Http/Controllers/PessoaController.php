@@ -28,8 +28,6 @@ class PessoaController extends Controller
             ->where('pessoas.id', $id)
             ->get();
 
-        //$naipes = Naipe::all();
-
         return view('pessoa.show', compact('pessoa', 'naipes'));
     }
 }
