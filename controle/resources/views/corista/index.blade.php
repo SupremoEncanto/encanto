@@ -13,11 +13,9 @@
                     <th>Avatar</th>
                     <th>Corista</th>
                     <th>Ramal</th>
-                    <th>E-mail</th>
-                    <th>Setor</th>
                     <th>Telefone</th>
-                    <th>Aniversário</th>
                     <th>Naipe</th>
+                    <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,11 +26,15 @@
                         <a href="{{ url('/pessoas', $corista->pessoas->id) }}">{{ $corista->pessoas->name }}</a>
                     </td>
                     <td>{{  $corista->pessoas->ramal  }}</td>
-                    <td>{{  $corista->pessoas->email  }}</td>
-                    <td>{{  $corista->pessoas->setor  }}</td>
                     <td>{{  $corista->pessoas->telefone  }}</td>
-                    <td>{{  $corista->pessoas->aniversario  }}</td>
                 <td>{{  $corista->naipes->naipe  }}</td>
+                <td>
+                    @if ($corista->left_on)
+                    <span class="label label-danger">Inativo</span>
+                    @else
+                    <span class="label label-success">Ativo</span>
+                    @endif
+                </td>
                 </tr>
                 @endforeach
                 </tbody>
