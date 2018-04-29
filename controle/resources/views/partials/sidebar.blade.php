@@ -8,17 +8,17 @@ data-position="right" class="navbar-default navbar-static-side">
     <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="/"><i class="fa fa-home fa-fw">
         <div class="icon-bg bg-orange"></div>
     </i><span class="menu-title">Home</span></a></li>
-    <li {{{ (Request::is('coristas') ? 'class=active' : '') }}}{{{ (Request::is('coristas/*') ? 'class=active' : '') }}}><a href="{{ url('coristas')  }}"><i class="fa fa-group fa-fw">
+    <li {{{ (Request::is('pessoas') ? 'class=active' : '') }}}{{{ (Request::is('pessoas/*') ? 'class=active' : '') }}}><a href="{{ url('pessoas')  }}"><i class="fa fa-group fa-fw">
+        <div class="icon-bg bg-green"></div>
+    </i><span class="menu-title">Pessoas</span></a>
+       
+    </li>
+    <li {{{ (Request::is('coristas') ? 'class=active' : '') }}}{{{ (Request::is('coristas/*') ? 'class=active' : '') }}}><a href="{{ url('coristas')  }}"><i class="fa fa-music fa-fw">
         <div class="icon-bg bg-pink"></div>
     </i><span class="menu-title">Coristas</span></a>
        
     </li>
-    <li {{{ (Request::is('chamada') ? 'class=active' : '') }}}{{{ (Request::is('chamada/*') ? 'class=active' : '') }}}><a href="{{ url('chamada')  }}"><i class="fa fa-list-alt fa-fw">
-        <div class="icon-bg bg-green"></div>
-    </i><span class="menu-title">Chamada</span></a>
-       
-    </li>
-    <li {{{ (Request::is('ensaios') ? 'class=active' : '') }}}{{{ (Request::is('ensaios/*') ? 'class=active' : '') }}}><a href="{{ url('ensaios')  }}"><i class="fa fa-music fa-fw">
+    <li {{{ (Request::is('ensaios') ? 'class=active' : '') }}}{{{ (Request::is('ensaios/*') ? 'class=active' : '') }}}><a href="{{ url('ensaios')  }}"><i class="fa fa-list-alt fa-fw">
         <div class="icon-bg bg-green"></div>
     </i><span class="menu-title">Ensaios</span></a>
 
