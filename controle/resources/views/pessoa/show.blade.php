@@ -159,10 +159,9 @@
                             <div class="col-sm-9 controls">
                                 <div class="row">
                                     <div class="col-xs-4"><select class="form-control">
-                                        <option value="1">Soprano</option>
-                                        <option value="2">Contralto</option>
-                                        <option value="3">Tenor</option>
-                                        <option value="4">Baixo</option>
+                                        @foreach ($naipes as $naipe)
+                                        <option value="{{ $naipe->id }}">{{ $naipe->naipe }}</option>
+                                        @endforeach
                                     </select></div>
                                 </div>
                             </div>

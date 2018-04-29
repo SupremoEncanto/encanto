@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Pessoa;
+use App\Naipe;
 
 class PessoaController extends Controller
 {
@@ -16,9 +17,19 @@ class PessoaController extends Controller
       return view('pessoa.index', compact('pessoas'));
     }
 
-    public function show (Pessoa $pessoa)
+    public function show ($id)
     {
+        $pessoa = Pessoa::with('coristas', 'coristas.naipes')->where('id', $id)->first();
 
-      return view('pessoa.show', compact('pessoa'));
+        $naipes = Naipe::with('coristas', 'coristas.pessoas')
+            ->join('coristas', 'naipes.id', '=', 'coristas.naipe_id')
+            ->join('pessoas', 'pessoas.id', '=', 'coristas.pessoa_id')
+            ->select('naipes.*')
+            ->where('pessoas.id', $id)
+            ->get();
+
+        //$naipes = Naipe::all();
+
+        return view('pessoa.show', compact('pessoa', 'naipes'));
     }
 }
