@@ -25,7 +25,7 @@
                 <tr>
                     <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $corista->pessoas->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
                     <td>
-                        <a href="{{ url('/coristas', $corista->id) }}">{{ $corista->pessoas->name }}</a>
+                        <a href="{{ url('/pessoas', $corista->pessoas->id) }}">{{ $corista->pessoas->name }}</a>
                     </td>
                     <td>{{  $corista->pessoas->ramal  }}</td>
                     <td>{{  $corista->pessoas->email  }}</td>
