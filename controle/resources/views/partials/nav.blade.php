@@ -11,7 +11,7 @@
         </form>
         <ul class="nav navbar navbar-top-links navbar-right mbn">
             
-            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/teseu_48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Tulio Macedo</span>&nbsp;<span class="caret"></span></a>
+            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="{{URL::asset('resources/assets/img/')}}/teseu_48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Tulio Macedo</span>&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-user pull-right">
                     <li><a href="#"><i class="fa fa-user"></i>Meu Perfil</a></li>
                     
