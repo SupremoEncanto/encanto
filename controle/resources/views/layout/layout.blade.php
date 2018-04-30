@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('partials.head')
+    <head>
+        @include('partials.head')
+    </head>    
 <body>
     <div>
         <!--BEGIN BACK TO TOP-->
