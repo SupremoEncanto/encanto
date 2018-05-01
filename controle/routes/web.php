@@ -9,6 +9,7 @@ Route::get('pessoas/{pessoa}', 'PessoaController@show');
 Route::get('coristas', 'CoristaController@index');
 Route::get('coristas/{corista}', 'CoristaController@show');
 Route::get('ensaios', 'EnsaioController@index');
+Route::get('ensaios/create', 'EnsaioController@create');
 Route::get('ensaios/{ensaio}', 'EnsaioController@show');
 
 Route::get('chamada', 'ChamadaController@index');

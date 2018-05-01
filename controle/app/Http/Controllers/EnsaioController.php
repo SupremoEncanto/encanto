@@ -19,7 +19,8 @@ class EnsaioController extends Controller
       return view('ensaio.index', compact('ensaios'));
     }
 
-    public function show($id) {
+    public function show($id) 
+    {
 
         $ensaio = Ensaio::where('id', $id)->with('chamadas')->firstOrFail();
 
@@ -34,5 +35,10 @@ class EnsaioController extends Controller
 
         return view('ensaio.show', compact('ensaio', 'coristas', 'pessoas', 'naipes'));
 
+    }
+
+    public function create ()
+    {
+      return view('ensaio.create');
     }
 }
