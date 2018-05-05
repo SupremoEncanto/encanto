@@ -11,7 +11,7 @@
             <div class="panel-body pan">
 
   {!! Form::open(['url' => 'ensaios']) !!}
-    @include('ensaio._form', ['submitButton' => 'Criar Ensaio'], ['tipo' => '1'], ['nome' => 'Criar um novo ensaio'])
+    @include('ensaio._form', ['submitButton' => 'Criar Ensaio'], ['date' => 'd/m/Y'], ['nome' => 'Criar um novo ensaio'])
   {!! Form::close() !!}
 
             </div>

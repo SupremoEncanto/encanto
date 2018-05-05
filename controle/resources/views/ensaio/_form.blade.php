@@ -6,7 +6,7 @@
                 {!! Form::label('date', 'Data do ensaio:') !!}
                 <div class="input-icon right">
                     <i class="fa fa-calendar"></i>
-                    {!! Form::text('date', null, ['class' => 'form-control span12']) !!}
+                    {!! Form::date('date', null, ['class' => 'form-control span12'], 'd/m/Y') !!}
                 </div>
             </div>
         </div>

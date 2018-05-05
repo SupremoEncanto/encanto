@@ -8,13 +8,15 @@ use App\Chamada;
 use App\Corista;
 use App\Pessoa;
 use DB;
+use App\Http\Requests\EnsaioRequest;
+use Illuminate\Support\Facades\Input;
 
 class EnsaioController extends Controller
 {
     public function index ()
     {
 
-      $ensaios = Ensaio::with('chamadas')->get();
+      $ensaios = Ensaio::with('chamadas')->latest()->get();
 
       return view('ensaio.index', compact('ensaios'));
     }
@@ -41,4 +43,33 @@ class EnsaioController extends Controller
     {
       return view('ensaio.create');
     }
+
+    public function store (EnsaioRequest $requisicao)
+    {
+      Ensaio::create($requisicao->all());
+
+      $data = Input::all();
+      $data['date'] = date('Y-m-d', strtotime($data['date']));
+
+      return redirect('ensaios');
+    }
+
+    public function edit ($id)
+    {
+      $ensaio = Ensaio::findOrFail($id);
+    
+      return view('ensaios.edit', compact('ensaio'));
+    }
+
+    public function update ($id, EnsaioRequest $requisicao)
+      {
+        $ensaio = Ensaio::findOrFail($id);
+
+        $data = Input::all();
+        $data['date'] = date('Y-m-d', strtotime($data['date']));
+
+        $ensaio->update($requisicao->all());
+
+        return redirect('ensaios');
+      }  
 }
