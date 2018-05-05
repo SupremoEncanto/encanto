@@ -58,7 +58,7 @@ class EnsaioController extends Controller
     {
       $ensaio = Ensaio::findOrFail($id);
     
-      return view('ensaios.edit', compact('ensaio'));
+      return view('ensaio.edit', compact('ensaio'));
     }
 
     public function update ($id, EnsaioRequest $requisicao)
@@ -71,5 +71,16 @@ class EnsaioController extends Controller
         $ensaio->update($requisicao->all());
 
         return redirect('ensaios');
-      }  
+      }
+
+      public function destroy($id)
+    {
+        // delete
+        $ensaio = Ensaio::find($id);
+        $ensaio->delete();
+
+        // redirect
+        //Session::flash('message', 'Ensaio deletado com sucesso!');
+        return redirect('ensaios');
+    }
 }

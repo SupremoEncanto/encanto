@@ -12,6 +12,8 @@
                 <tr>
                     <th>#</th>
                     <th>Data</th>
+                    <th>Regular</th>
+                    <th>Ação</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,6 +22,22 @@
                 <td>{{ $ensaio->id }}</td>
                 <td>
                     <a href="{{ url('/ensaios', $ensaio->id) }}"> {{ Carbon\Carbon::parse($ensaio->date)->format('d/m/Y') }}</a>
+                </td>
+                <td>
+                    @if ($ensaio->regular)
+                    Regular
+                    @endif
+                </td>
+                <td>
+                    <span>
+                        <form style='display:inline;' action="{{ url('/ensaios', ['id' => $ensaio->id]) }}" method="post">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button class="btn btn-link" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
+                            {!! csrf_field() !!}
+                            
+                        </form>
+                        <a href="ensaios/{{$ensaio->id}}/edit"><span class="text-blue"><i class="fa fa-edit"></i></span></a>
+                    </span>
                 </td>
                 </tr>
                 @endforeach
