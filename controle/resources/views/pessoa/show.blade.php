@@ -68,116 +68,20 @@
             </ul>
             <div id="generalTabContent" class="tab-content">
                 <div id="tab-edit" class="tab-pane fade in active">
-                    <form action="#" class="form-horizontal"><h3>Usuário</h3>
-
-                        <div class="form-group"><label class="col-sm-3 control-label">Email</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="email" placeholder="{{ $pessoa->email }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Usuário</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="text" placeholder="{{ $pessoa->email }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Senha</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-4"><input type="password" placeholder="senha" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Confirmar senha</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-4"><input type="password" placeholder="senha" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                        <h3>Dados pessoais</h3>
-
-                        <div class="form-group"><label class="col-sm-3 control-label">Nome</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="text" placeholder="{{ $pessoa->name }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Aniversário</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-4"><input id="datepicker-normal" type="text" placeholder="{{ $pessoa->aniversario }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Telefone</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="text" placeholder="{{ $pessoa->telefone }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Ramal</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="text" placeholder="{{ $pessoa->ramal }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-3 control-label">Setor</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-9"><input type="text" placeholder="{{ $pessoa->setor }}" class="form-control"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <hr/>
-                        
-                        <button type="submit" class="btn btn-green btn-block">Finish</button>
-                    </form>
+                    {!! Form::open(['url' => 'users']) !!}
+                        @include('user._form', ['submitButton' => 'Editar Usuário'], ['nome' => 'Editar Usuário'])
+                    {!! Form::close() !!}
                 </div>
-                <div id="tab-messages" class="tab-pane fade in">
-                    <form action="#" class="form-horizontal"><h3>Usuário</h3>
-                        <div class="form-group"><label class="col-sm-3 control-label">Naipe</label>
-
-                            <div class="col-sm-9 controls">
-                                <div class="row">
-                                    <div class="col-xs-4"><select class="form-control">
-                                        @foreach ($naipes as $naipe)
-                                        <option value="{{ $naipe->id }}">{{ $naipe->naipe }}</option>
-                                        @endforeach
-                                    </select></div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="form-group"><label class="col-sm-3 control-label">Data de saída</label>
-
-                        <div class="col-sm-9 controls">
-                            <div class="row">
-                                <div class="col-xs-9"><input type="text" placeholder="{{ Carbon\Carbon::parse($pessoa->coristas->left_on)->format('d/m/Y') }}" class="form-control"/></div>
-                            </div>
-                        </div>
+                <hr/>
+                <div id="tab-edit" class="tab-pane fade in active">
+                        {!! Form::model($pessoa, ['method' => 'PATCH', 'action' => ['PessoaController@update', $pessoa->id]]) !!}
+                            @include('pessoa._form', ['submitButton' => 'Editar Pessoa'], ['nome' => 'Editar Pessoa'])
+                        {!! Form::close() !!}
                     </div>
-                    <hr/>
-                        
-                        <button type="submit" class="btn btn-green btn-block">Finish</button>
-                    </form>
+                <div id="tab-messages" class="tab-pane fade in">
+                    {!! Form::model($corista, ['method' => 'PATCH', 'action' => ['CoristaController@update', $corista->id]]) !!}
+                        @include('corista._form', ['submitButton' => 'Editar Corista'], ['nome' => 'Editar Corista'])
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Request\PessoaRequest;
 
 use App\Pessoa;
 use App\Naipe;
@@ -29,5 +29,14 @@ class PessoaController extends Controller
             ->get();
 
         return view('pessoa.show', compact('pessoa', 'naipes'));
+    }
+
+    public function update ($id, PessoaRequest $requisicao) 
+    {
+        $pessoa = Pessoa::findOrFail($id);
+
+        $pessoa->update($requisicao->all());
+
+        return redirect('pessoas');
     }
 }
