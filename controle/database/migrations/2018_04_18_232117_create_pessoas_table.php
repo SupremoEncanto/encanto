@@ -16,12 +16,12 @@ class CreatePessoasTable extends Migration
         Schema::create('pessoas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->string('aniversario');
-            $table->string('ramal');
-            $table->string('telefone');
-            $table->string('setor');
-            $table->string('avatar');
+            $table->string('email')->nullable();
+            $table->string('aniversario')->nullable();
+            $table->string('ramal')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('setor')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
