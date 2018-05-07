@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 {!! Form::label('regular', 'Ensaio regular?') !!}<br>
-                {!! Form::checkbox('regular', 1, null, ['class' => 'form-control icheckbox_minimal-grey']) !!}
+                {{ Form::select('regular', ['Extraordinário', 'Regular'], null, ['class' => 'form-control']) }}
             </div>
         </div> 
     </div> 
