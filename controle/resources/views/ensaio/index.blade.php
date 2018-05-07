@@ -26,6 +26,8 @@
                 <td>
                     @if ($ensaio->regular)
                     Regular
+                    @else
+                    Extraordinário
                     @endif
                 </td>
                 <td>
