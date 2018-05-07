@@ -10,7 +10,11 @@ class Pessoa extends Model
     protected $fillable = [
         'name',
         'email',
-        'aniversario'
+        'aniversario',
+        'telefone',
+        'ramal',
+        'setor',
+        'avatar'
     ];
 
     public function coristas()
