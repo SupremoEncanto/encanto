@@ -38,10 +38,14 @@
                                     <tr>
                                         <td>Status</td>
                                         <td>
-                                            @if ($pessoa->coristas->left_on)
-                                            <span class="label label-danger">Inativo</span>
+                                            @if ($corista)
+                                                @if ($pessoa->coristas->left_on)
+                                                <span class="label label-danger">Inativo</span>
+                                                @else
+                                                <span class="label label-success">Ativo</span>
+                                                @endif
                                             @else
-                                            <span class="label label-success">Ativo</span>
+                                                <span class="label label-warning">Sem Corista</span>
                                             @endif
                                         </td>
                                     </tr>
