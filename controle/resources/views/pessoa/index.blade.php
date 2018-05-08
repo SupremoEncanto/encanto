@@ -5,7 +5,7 @@
 @section('content')
 <div class="col-lg-12">
     <div class="panel panel-grey">
-        <div class="panel-heading">Lista das Pessoas <span class="pull-right"><i class="fa fa-plus"></i>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;<i class="fa fa-save"></i></span></div>
+        <div class="panel-heading">Lista das Pessoas <span class="pull-right"><a href="pessoas/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;<i class="fa fa-save"></i></span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
@@ -15,8 +15,8 @@
                     <th>Ramal</th>
                     <th>E-mail</th>
                     <th>Setor</th>
-                    <th>Telefone</th>
                     <th>Aniversário</th>
+                    <th>Ação</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,8 +29,18 @@
                     <td>{{  $pessoa->ramal  }}</td>
                     <td>{{  $pessoa->email  }}</td>
                     <td>{{  $pessoa->setor  }}</td>
-                    <td>{{  $pessoa->telefone  }}</td>
                     <td>{{  $pessoa->aniversario  }}</td>
+                    <td>
+                        <span>
+                            <form style='display:inline;' action="{{ url('/pessoas', ['id' => $pessoa->id]) }}" method="post">
+                                <input type="hidden" name="_method" value="delete" />
+                                <button class="btn btn-link" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
+                                {!! csrf_field() !!}
+                                
+                            </form>
+                            <a href="pessoas/{{$pessoa->id}}/edit"><span class="text-blue"><i class="fa fa-edit"></i></span></a>
+                        </span>
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
