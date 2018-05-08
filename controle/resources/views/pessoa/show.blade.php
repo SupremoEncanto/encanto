@@ -54,6 +54,10 @@
                                         <td>{{ $pessoa->setor }}</td>
                                     </tr>
                                     <tr>
+                                        <td>Aniversário</td>
+                                        <td>{{ $pessoa->aniversario }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Membro desde</td>
                                         <td>{{ $pessoa->created_at }}</td>
                                     </tr>

@@ -23,11 +23,12 @@ class PessoaController extends Controller
     {
         $pessoa = Pessoa::findOrFail($id);
         $corista = Corista::with('pessoas')->where('pessoa_id', $pessoa->id)->first();
-        //$corista_id = $pessoa->coristas->id;
-        //$corista = Corista::findOrFail($pessoa->coristas->id);
+        
         if($corista) 
         {
             $pessoa = Pessoa::with('coristas', 'coristas.naipes')->where('id', $id)->first();
+
+            $corista = Corista::with('pessoas')->where('pessoa_id', $pessoa->id)->first();
 
             $naipes = Naipe::with('coristas', 'coristas.pessoas')
                 ->join('coristas', 'naipes.id', '=', 'coristas.naipe_id')
@@ -36,7 +37,7 @@ class PessoaController extends Controller
                 ->where('pessoas.id', $id)
                 ->get();
 
-            return view('pessoa.show', compact('pessoa', 'naipes'));
+            return view('pessoa.show', compact('pessoa', 'naipes', 'corista'));
         }
 
         else
