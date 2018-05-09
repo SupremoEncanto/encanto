@@ -1,15 +1,8 @@
 <form action="#" class="form-horizontal"><h3>Corista</h3>
-    <div class="form-group"><label class="col-sm-3 control-label">Naipe</label>
-
-        <div class="col-sm-9 controls">
-            <div class="row">
-                <div class="col-xs-4"><select class="form-control">
-                    @foreach ($naipes as $naipe)
-                    <option value="{{ $naipe->id }}">{{ $naipe->naipe }}</option>
-                    @endforeach
-                </select></div>
-            </div>
-        </div>
+    <div class="form-group">
+        {!! Form::label('naipes', 'Naipes') !!}<br>
+        {!! Form::select('id', $naipes) !!}
+        
         <div class="col-md-6">
             <div class="form-group">
                 {!! Form::label('pessoa_id', 'Pessoa') !!}<br>

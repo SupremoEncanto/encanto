@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Corista;
 use App\Pessoa;
+use App\Naipe;
 
 class CoristaController extends Controller
 {
@@ -18,15 +19,22 @@ class CoristaController extends Controller
 
     public function show (Corista $corista)
     {
-
       return view('corista.show', compact('corista'));
     }
 
-    public function create ($id)
+    public function create ()
     {
-      $pessoa = Pessoa::findOrFail($id);
+      //$naipes = Naipe::pluck('id', 'naipe');
+      $naipes = Naipe::all()->toArray();
+      // $naipe_associativo = [];
+      // foreach($naipes as $indice => $naipe)
+      // {
+      //   $naipe_associativo[$naipe['id']] = $naipe['naipe']; 
+      // }
+      //dd($naipes);
 
-      return view('corista.create', compact('pessoa'));
+      return view('corista.create', compact('naipes'));
+
     }
 
     public function store (CoristaRequest $requisicao)
