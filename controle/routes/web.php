@@ -4,10 +4,9 @@ Route::get('/', function () {
     return view('layout.index');
 });
 
-Route::get('coristas', 'CoristaController@index');
-Route::get('coristas/{corista}', 'CoristaController@show');
 Route::resource('ensaios', 'EnsaioController');
 Route::resource('pessoas', 'PessoaController');
+Route::resource('coristas', 'CoristaController');
 
 Route::get('chamada', 'ChamadaController@index');
 

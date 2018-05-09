@@ -10,17 +10,18 @@
                 </select></div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                {!! Form::label('pessoa_id', 'Pessoa') !!}<br>
+                {{ Form::select('pessoa_id', ['Extraordinário', 'Regular'], null, ['class' => 'form-control']) }}
+            </div>
+        </div>
     </div>
 <div class="form-group"><label class="col-sm-3 control-label">Data de saída</label>
 
     <div class="col-sm-9 controls">
         <div class="row">
-            @if ($pessoa->coristas->left_on)
-            <div class="col-xs-9"><input type="date" value="{{ Carbon\Carbon::parse($pessoa->coristas->left_on)->format('d/m/Y') }}" class="form-control"/></div>
-            @else
-            <div class="col-xs-9"><input type="date" value="" class="form-control"/></div>
-            @endif
-            
+            {!! Form::date('date', null, ['class' => 'form-control span12'], 'd/m/Y') !!}
         </div>
     </div>
 </div>

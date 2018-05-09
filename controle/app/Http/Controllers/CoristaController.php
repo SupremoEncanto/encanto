@@ -22,12 +22,14 @@ class CoristaController extends Controller
       return view('corista.show', compact('corista'));
     }
 
-    public function create ()
+    public function create ($id)
     {
-      return view('corista.create');
+      $pessoa = Pessoa::findOrFail($id);
+
+      return view('corista.create', compact('pessoa'));
     }
 
-    public function store (CVoristaRequest $requisicao)
+    public function store (CoristaRequest $requisicao)
     {
       Corista::create($requisicao->all());
 
