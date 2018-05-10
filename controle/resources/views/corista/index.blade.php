@@ -7,13 +7,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="coristaCreateLabel">Adicionar Corista</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body row">
-            <div class="form-group col-md-6">
+          <h5 class="modal-title" id="coristaCreateLabel" style="display:  inline;">Adicionar Corista</h5>
+          <span aria-hidden="true">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </span>
+        </div> 
+        <div class="modal-body">
+                <form action="#" class="form-horizontal row" style="margin:0 2px;">
+            <div class="form-group col-md-6" style="margin-right:3px;"> 
                 {!! Form::label('naipes', 'Naipes') !!}<br>
                 {!! Form::select('id', $naipes, null, ['class' => 'form-control']) !!}
             </div>
@@ -28,8 +29,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Salvar</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" >Salvar</button>
         </div>
+        </form>
       </div>
     </div>
   </div>

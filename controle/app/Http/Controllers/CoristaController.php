@@ -19,21 +19,7 @@ class CoristaController extends Controller
 
       $naipes = Naipe::pluck('naipe', 'id');
 
-      //$pessoas = Pessoa::where('id', '!=', Corista::where('pessoa_id', '>', 0))->get();
       $pessoas = Pessoa::whereNotIn('id', $cadastrados)->get();
-
-
-      //$pessoas = Pessoa::where('id', $id)->where('id', '!=', Corista::pessoa_id())->get();
-//       $usersLocation = DB::table(' users' )->where('location', $location)->where('id', '!=', 
-//       Auth::id())-> whereNotIn('id', $currentUsers)->get();
-
-//       $pessoas = Pessoa::with('coristas')->whereDoesntHave('id', function($q){
-// $q->where('pessoa_id', '=', $coristas);
-//       });
-      //dd($pessoas);
-  //     User::whereDoesntHave('granteeReports',  function($q){
-  //       $q->where('year', '=',  2017 );
-  //  })->get();
 
       return view('corista.index', compact('coristas', 'pessoas', 'naipes'));
     }

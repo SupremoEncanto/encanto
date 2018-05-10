@@ -1,23 +1,19 @@
 <form action="#" class="form-horizontal"><h3>Corista</h3>
-    <div class="form-group">
-        {!! Form::label('naipes', 'Naipes') !!}<br>
-        {!! Form::select('id', $naipes) !!}
-        
-        <div class="col-md-6">
-            <div class="form-group">
-                {!! Form::label('pessoa_id', 'Pessoa') !!}<br>
-                {{ Form::select('pessoa_id', ['Extraordinário', 'Regular'], null, ['class' => 'form-control']) }}
-            </div>
+    <div class="form-group col-md-6">
+            {!! Form::label('naipes', 'Naipes') !!}<br>
+            {!! Form::select('id', $naipes, null, ['class' => 'form-control']) !!}
         </div>
-    </div>
-<div class="form-group"><label class="col-sm-3 control-label">Data de saída</label>
-
-    <div class="col-sm-9 controls">
-        <div class="row">
-            {!! Form::date('date', null, ['class' => 'form-control span12'], 'd/m/Y') !!}
+        <div class="form-group col-md-6">
+            {!! Form::label('pessoa_id', 'Pessoa') !!}<br>
+            <select class="form-control" name="id">
+                @foreach ($pessoas as $pessoa)
+                    <option value="{{ $pessoa->id }}">{{ $pessoa->name }}</option>
+                @endforeach
+            </select>
         </div>
-    </div>
-</div>
 <hr/>
-{!! Form::submit($submitButton, ['class' => 'btn btn-green btn-block']) !!}
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" >Salvar</button>
+      </div>
 </form>
