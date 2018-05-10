@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Corista;
 use App\Pessoa;
 use App\Naipe;
+use DB;
 
 class CoristaController extends Controller
 {
@@ -14,11 +15,25 @@ class CoristaController extends Controller
 
       $coristas = Corista::with('pessoas', 'naipes')->get();
 
-      //$naipes = Naipe::all();
+      $cadastrados = Corista::pluck('pessoa_id');
 
       $naipes = Naipe::pluck('naipe', 'id');
 
-      $pessoas = Pessoa::pluck('name', 'id')->where('id', '<>', ['coristas', 'pessoa_id']);
+      //$pessoas = Pessoa::where('id', '!=', Corista::where('pessoa_id', '>', 0))->get();
+      $pessoas = Pessoa::whereNotIn('id', $cadastrados)->get();
+
+
+      //$pessoas = Pessoa::where('id', $id)->where('id', '!=', Corista::pessoa_id())->get();
+//       $usersLocation = DB::table(' users' )->where('location', $location)->where('id', '!=', 
+//       Auth::id())-> whereNotIn('id', $currentUsers)->get();
+
+//       $pessoas = Pessoa::with('coristas')->whereDoesntHave('id', function($q){
+// $q->where('pessoa_id', '=', $coristas);
+//       });
+      //dd($pessoas);
+  //     User::whereDoesntHave('granteeReports',  function($q){
+  //       $q->where('year', '=',  2017 );
+  //  })->get();
 
       return view('corista.index', compact('coristas', 'pessoas', 'naipes'));
     }
@@ -30,14 +45,15 @@ class CoristaController extends Controller
 
     public function create ()
     {
-      //$naipes = Naipe::pluck('id', 'naipe');
+
       $naipes = Naipe::all()->toArray();
       $naipe_associativo = [];
       foreach($naipes as $indice => $naipe)
       {
+
         $naipe_associativo[$naipe['id']] = $naipe['naipe']; 
+
       }
-      //dd($naipes);
 
       return view('corista.create', compact('naipes'));
 

@@ -19,7 +19,11 @@
             </div>
             <div class="form-group col-md-6">
                 {!! Form::label('pessoa_id', 'Pessoa') !!}<br>
-                {{ Form::select('id', $pessoas, null, ['class' => 'form-control']) }}
+                <select class="form-control" name="id">
+                    @foreach ($pessoas as $pessoa)
+                        <option value="{{ $pessoa->id }}">{{ $pessoa->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="modal-footer">
