@@ -14,7 +14,13 @@ class CoristaController extends Controller
 
       $coristas = Corista::with('pessoas', 'naipes')->get();
 
-      return view('corista.index', compact('coristas'));
+      //$naipes = Naipe::all();
+
+      $naipes = Naipe::pluck('naipe', 'id');
+
+      $pessoas = Pessoa::pluck('name', 'id')->where('id', '<>', ['coristas', 'pessoa_id']);
+
+      return view('corista.index', compact('coristas', 'pessoas', 'naipes'));
     }
 
     public function show (Corista $corista)
@@ -26,11 +32,11 @@ class CoristaController extends Controller
     {
       //$naipes = Naipe::pluck('id', 'naipe');
       $naipes = Naipe::all()->toArray();
-      // $naipe_associativo = [];
-      // foreach($naipes as $indice => $naipe)
-      // {
-      //   $naipe_associativo[$naipe['id']] = $naipe['naipe']; 
-      // }
+      $naipe_associativo = [];
+      foreach($naipes as $indice => $naipe)
+      {
+        $naipe_associativo[$naipe['id']] = $naipe['naipe']; 
+      }
       //dd($naipes);
 
       return view('corista.create', compact('naipes'));

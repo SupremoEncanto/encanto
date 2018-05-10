@@ -18,7 +18,7 @@
                         <div class="col-md-9"> 
                             <div class="tab-content">
                                 <div class="">
-                                    {!! Form::open(['url' => 'coristas']) !!}
+                                    {!! Form::open($naipes, ['url' => 'coristas']) !!}
                                         @include('corista._form', ['submitButton' => 'Adicionar Corista'], ['nome' => 'Adicionar Corista'])
                                     {!! Form::close() !!}
                                 </div>
