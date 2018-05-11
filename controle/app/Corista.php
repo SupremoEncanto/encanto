@@ -9,7 +9,9 @@ class Corista extends Model
 
     protected $fillable = [
         'joined_at',
-        'naipe'
+        'naipe_id',
+        'pessoa_id',
+        'left_on'
     ];
 
     public function pessoas()

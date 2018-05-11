@@ -49,7 +49,7 @@ class CoristaController extends Controller
 
     public function store (CoristaRequest $requisicao)
     {
-      dd($requisicao->all());
+      
       Corista::create($requisicao->all());
       
       $data = Input::all();
