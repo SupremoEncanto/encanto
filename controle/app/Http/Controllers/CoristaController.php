@@ -21,6 +21,8 @@ class CoristaController extends Controller
 
       $naipes = Naipe::pluck('naipe', 'id');
 
+      //$naipes = Naipe::all();
+
       $pessoas = Pessoa::whereNotIn('id', $cadastrados)->get();
 
       return view('corista.index', compact('coristas', 'pessoas', 'naipes'));
