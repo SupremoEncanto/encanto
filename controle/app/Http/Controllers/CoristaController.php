@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CoristaRequest;
 use App\Corista;
 use App\Pessoa;
 use App\Naipe;
 use DB;
+use Illuminate\Support\Facades\Input;
 
 class CoristaController extends Controller
 {
@@ -47,7 +49,12 @@ class CoristaController extends Controller
 
     public function store (CoristaRequest $requisicao)
     {
+      dd($requisicao->all());
       Corista::create($requisicao->all());
+      
+      $data = Input::all();
+      
+      $data['joined_at'] = date('Y-m-d', strtotime($data['joined_at']));
 
       return redirect('coristas');
     }

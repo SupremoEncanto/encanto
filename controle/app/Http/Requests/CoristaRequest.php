@@ -24,7 +24,9 @@ class CoristaRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'joined_at' => 'required',
+            'pessoa_id' => 'required',
+            'naipe_id' => 'required',
         ];
     }
 }
