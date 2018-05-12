@@ -5,7 +5,7 @@
 @section('content')
 <div class="col-lg-12">
     <div class="panel panel-grey">
-        <div class="panel-heading">Lista das Pessoas <span class="pull-right"><a href="pessoas/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
+        <div class="panel-heading">Lista das Pessoas <span class="pull-right"><a class="text-blue" href="pessoas/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
