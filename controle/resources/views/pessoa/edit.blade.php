@@ -21,6 +21,7 @@
                                     {!! Form::model($pessoa, ['method' => 'PATCH', 'action' => ['PessoaController@update', $pessoa->id]]) !!}
                                         @include('pessoa._form', ['submitButton' => 'Editar Pessoa'], ['nome' => 'Editar Pessoa'])
                                     {!! Form::close() !!}
+                                    @include('errors.list')
                                 </div>
                             </div>    
                         </div>

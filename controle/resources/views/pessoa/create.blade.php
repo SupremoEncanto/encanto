@@ -21,6 +21,7 @@
                                     {!! Form::open(['url' => 'pessoas']) !!}
                                         @include('pessoa._form', ['submitButton' => 'Adicionar Pessoa'], ['nome' => 'Adicionar Pessoa'])
                                     {!! Form::close() !!}
+                                    @include('errors.list')
                                 </div>
                             </div>    
                         </div>
