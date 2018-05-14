@@ -35,7 +35,25 @@ class EnsaioController extends Controller
             ->where('ensaios.id', $id)
             ->get();
 
-        return view('ensaio.show', compact('ensaio', 'coristas', 'pessoas', 'naipes'));
+        $adicionaveis = Pessoa::with('coristas', 'coristas.chamadas', 'coristas.chamadas.ensaios')
+            ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
+            ->join('chamadas', 'coristas.id', '=', 'chamadas.corista_id')
+            ->join('ensaios', 'chamadas.ensaio_id', '=', 'ensaios.id')
+            ->select('pessoas.*')
+            ->where('ensaios.id', '<>' ,$id)
+           ->get();
+
+        //$adicionaveis = $pessoas->id;
+        // $coristas_adicionaveis = Pessoa::with('coristas')
+        // ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
+        // ->select('pessoas.name', 'coristas.id')
+        // ->whereNotIn('pessoas.id', $pessoas)->get();
+        //$coristas_adicionaveis = Pessoa::whereNotIn('id', $adicionaveis)->get();
+        //dd($pessoas);
+        //dd($coristas_adicionaveis);
+        //dd($adicionaveis);
+
+        return view('ensaio.show', compact('ensaio', 'coristas', 'adicionaveis', 'pessoas', 'naipes'));
 
     }
 

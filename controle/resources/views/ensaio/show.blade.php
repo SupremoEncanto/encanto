@@ -3,9 +3,11 @@
 @section('title', 'Ensaios')
 
 @section('content')
+
+@include('chamada._create')
 <div class="col-lg-12">
     <div class="panel panel-grey">
-        <div class="panel-heading">Ensaio do dia  {{ Carbon\Carbon::parse($ensaio->date)->toFormattedDateString() }}<span class="pull-right"><i class="fa fa-plus"></i>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;</span></div>
+        <div class="panel-heading">Ensaio do dia  {{ Carbon\Carbon::parse($ensaio->date)->toFormattedDateString() }}<span class="pull-right"><a class="text-blue" type="button" data-toggle="modal" data-target="#chamadaCreate"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;<i class="fa fa-edit"></i>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
