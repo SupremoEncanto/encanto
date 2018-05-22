@@ -35,11 +35,12 @@ class EnsaioController extends Controller
             ->where('ensaios.id', $id)
             ->get();
 
-        $adicionaveis = Pessoa::with('coristas', 'coristas.chamadas', 'coristas.chamadas.ensaios')
-            ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
-            ->select('pessoas.*')
-            ->whereNotIn('pessoas.id', $pessoas)
-            ->get();
+        // $adicionaveis = Pessoa::with('coristas', 'coristas.chamadas', 'coristas.chamadas.ensaios')
+        //     ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
+        //     ->select('pessoas.*')
+        //     ->whereNotIn('pessoas.id', $pessoas)
+        //     ->get();
+        $adicionaveis = Pessoa::with('coristas')->get();
 
         //$adicionaveis = $pessoas->id;
         // $coristas_adicionaveis = Pessoa::with('coristas')
