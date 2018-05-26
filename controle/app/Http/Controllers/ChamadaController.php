@@ -19,12 +19,8 @@ class ChamadaController extends Controller
     public function store (ChamadaRequest $requisicao)
     {
 
-      $req = [$requisicao->ensaios->id, $requisicao->pessoas->id, $requisicao->pessoas->coristas->id];
-      dd($req);
-      Chamada::create($req);
-
-      // $data = Input::all();
-      // $data['date'] = date('Y-m-d', strtotime($data['date']));
+      dd($requisicao);
+      Chamada::create($requisicao->all());
 
       return redirect('ensaios');
     }

@@ -8,7 +8,7 @@
                 </span>
             </div> 
             <div class="modal-body">
-                {!! Form::open(['url' => 'chamadas', 'class' => 'form-horizontal']) !!}
+                {!! Form::open(['url' => 'ensaios', 'class' => 'form-horizontal']) !!}
                 <div class="row">
                     {!! Form::hidden('ensaio_id', $ensaio->id) !!}
                 <div class="form-group col-md-10">
