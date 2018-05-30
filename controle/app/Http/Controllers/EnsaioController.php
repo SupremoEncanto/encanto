@@ -34,13 +34,28 @@ class EnsaioController extends Controller
             ->select('pessoas.*', 'naipes.naipe')
             ->where('ensaios.id', $id)
             ->get();
-
+        
+        
+        $sql = 'SELECT pessoa.*, corista.id corista_id '
+             . 'FROM pessoas pessoa ' 
+             . 'INNER JOIN coristas corista ON pessoa.id = corista.pessoa_id '
+             . 'WHERE corista.id NOT IN ( '
+             . 'SELECT chamada.corista_id '
+             . 'FROM  chamadas chamada '
+             . 'INNER JOIN ensaios ensaio ON ensaio.id = chamada.ensaio_id '
+             . 'WHERE ensaio.id = :id '
+             . ')';
         // $adicionaveis = Pessoa::with('coristas', 'coristas.chamadas', 'coristas.chamadas.ensaios')
         //     ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
         //     ->select('pessoas.*')
         //     ->whereNotIn('pessoas.id', $pessoas)
         //     ->get();
-        $adicionaveis = Pessoa::with('coristas')->get();
+        $adicionaveis = DB::select($sql, ['id' => $id]);
+        //dd($adicionaveis);
+          // ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
+          // ->select('pessoas.*')
+          // ->whereNotIn()
+          // ->get();
 
         //$adicionaveis = $pessoas->id;
         // $coristas_adicionaveis = Pessoa::with('coristas')

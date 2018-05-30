@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ensaio;
 use App\Chamada;
+use App\Http\Requests\ChamadaRequest;
 
 class ChamadaController extends Controller
 {
@@ -19,9 +20,12 @@ class ChamadaController extends Controller
     public function store (ChamadaRequest $requisicao)
     {
 
-      dd($requisicao);
       Chamada::create($requisicao->all());
+      
+      $id = $requisicao->ensaio_id;
 
-      return redirect('ensaios');
+      return redirect()->action(
+        'EnsaioController@show', ['id' => $id]
+      );
     }
 }

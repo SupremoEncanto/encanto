@@ -8,7 +8,7 @@ Route::resource('ensaios', 'EnsaioController');
 Route::resource('pessoas', 'PessoaController');
 Route::resource('coristas', 'CoristaController');
 
-Route::get('chamada', 'ChamadaController@index');
+Route::post('chamadas', 'ChamadaController@store');
 
 
 Route::get('/resources/assets/img/{filename}', function($filename){

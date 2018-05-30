@@ -8,14 +8,14 @@
                 </span>
             </div> 
             <div class="modal-body">
-                {!! Form::open(['url' => 'ensaios', 'class' => 'form-horizontal']) !!}
+                {!! Form::open(['url' => 'chamadas', 'class' => 'form-horizontal']) !!}
                 <div class="row">
                     {!! Form::hidden('ensaio_id', $ensaio->id) !!}
                 <div class="form-group col-md-10">
-                    {!! Form::label('pessoa_id', 'Pessoa') !!}<br>
-                    <select class="form-control" name="pessoa_id">
+                    {!! Form::label('corista_id', 'Pessoa') !!}<br>
+                    <select class="form-control" name="corista_id">
                         @foreach ($adicionaveis as $adicionavel)
-                            <option value="{{ $adicionavel->id }}">{{ $adicionavel->name }}</option>
+                            <option value="{{ $adicionavel->corista_id }}">{{ $adicionavel->name }}</option>
                         @endforeach
                     </select>
                 </div>
