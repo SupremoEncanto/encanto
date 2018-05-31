@@ -14,6 +14,6 @@
     {!! Form::hidden('pessoa_id', null, ['class' => 'form-control span12']) !!}
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-<button type="submit" class="btn btn-primary">Salvar</button>
+<a type="button" class="btn btn-info" data-dismiss="modal" href="/coristas" >Cancelar</a>
+<button type="submit" class="btn btn-success">Salvar</button>
 </div>
