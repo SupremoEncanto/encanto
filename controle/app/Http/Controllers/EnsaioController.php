@@ -34,8 +34,7 @@ class EnsaioController extends Controller
             ->select('pessoas.*', 'naipes.naipe')
             ->where('ensaios.id', $id)
             ->get();
-        
-        
+              
         $sql = 'SELECT pessoa.*, corista.id corista_id '
              . 'FROM pessoas pessoa ' 
              . 'INNER JOIN coristas corista ON pessoa.id = corista.pessoa_id '
@@ -45,27 +44,8 @@ class EnsaioController extends Controller
              . 'INNER JOIN ensaios ensaio ON ensaio.id = chamada.ensaio_id '
              . 'WHERE ensaio.id = :id '
              . ')';
-        // $adicionaveis = Pessoa::with('coristas', 'coristas.chamadas', 'coristas.chamadas.ensaios')
-        //     ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
-        //     ->select('pessoas.*')
-        //     ->whereNotIn('pessoas.id', $pessoas)
-        //     ->get();
-        $adicionaveis = DB::select($sql, ['id' => $id]);
-        //dd($adicionaveis);
-          // ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
-          // ->select('pessoas.*')
-          // ->whereNotIn()
-          // ->get();
 
-        //$adicionaveis = $pessoas->id;
-        // $coristas_adicionaveis = Pessoa::with('coristas')
-        // ->join('coristas', 'pessoas.id', '=', 'coristas.pessoa_id')
-        // ->select('pessoas.name', 'coristas.id')
-        // ->whereNotIn('pessoas.id', $pessoas)->get();
-        //$coristas_adicionaveis = Pessoa::whereNotIn('id', $adicionaveis)->get();
-        //dd($pessoas);
-        //dd($coristas_adicionaveis);
-        //dd($adicionaveis);
+        $adicionaveis = DB::select($sql, ['id' => $id]);
 
         return view('ensaio.show', compact('ensaio', 'coristas', 'adicionaveis', 'pessoas', 'naipes'));
 
@@ -107,12 +87,10 @@ class EnsaioController extends Controller
 
       public function destroy($id)
     {
-        // delete
+
         $ensaio = Ensaio::find($id);
         $ensaio->delete();
 
-        // redirect
-        //Session::flash('message', 'Ensaio deletado com sucesso!');
         return redirect('ensaios');
     }
 }
