@@ -11,8 +11,8 @@
                 {!! Form::open(['url' => 'coristas', 'class' => 'form-horizontal']) !!}
                 <div class="row">
                 <div class="form-group col-md-6" style="margin-right:3px;"> 
-                    {!! Form::label('naipes', 'Naipes') !!}<br>
-                    {!! Form::select('naipe_id', $naipes, null, ['class' => 'form-control']) !!}
+                    {!! Form::label('voz', 'Naipes') !!}<br>
+                    {!! Form::select('naipe_id', $voz, null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group col-md-6">
                     {!! Form::label('pessoa_id', 'Pessoa') !!}<br>

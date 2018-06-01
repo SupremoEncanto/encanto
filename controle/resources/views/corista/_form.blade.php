@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="form-group col-md-6"> 
         {!! Form::label('naipes', 'Naipes') !!}<br>
-        {{ Form::select('naipe_id', ['Soprano', 'Contralto', 'Tenor', 'Baixo'], null, ['class' => 'form-control']) }}
+        {{ Form::select('naipe_id', ['Selecione', 'Soprano', 'Contralto', 'Tenor', 'Baixo'], null, ['class' => 'form-control']) }}
     </div>
     <div class="form-group col-md-6">
         {!! Form::label('joined_at', 'Entrou no dia') !!}<br>

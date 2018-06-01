@@ -19,11 +19,11 @@ class CoristaController extends Controller
 
       $cadastrados = Corista::pluck('pessoa_id');
 
-      $naipes = Naipe::pluck('naipe', 'id');
+      $voz = Naipe::pluck('naipe', 'id');
 
       $pessoas = Pessoa::whereNotIn('id', $cadastrados)->get();
 
-      return view('corista.index', compact('coristas', 'pessoas', 'naipes'));
+      return view('corista.index', compact('coristas', 'pessoas', 'voz'));
     }
 
     public function show (Corista $corista)

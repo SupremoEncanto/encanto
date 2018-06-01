@@ -12,7 +12,7 @@
                 <div class="row">
                 <div class="form-group col-md-6" style="margin-right:3px;"> 
                     {!! Form::label('naipes', 'Naipes') !!}<br>
-                    {!! Form::select('naipe_id', $naipes, $corista->naipes->naipe, ['class' => 'form-control']) !!}
+                    {!! Form::select('naipes.id', $naipes, $corista->naipes->naipe, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group col-md-6">
                     {!! Form::label('joined_at', 'Entrou no dia') !!}<br>
