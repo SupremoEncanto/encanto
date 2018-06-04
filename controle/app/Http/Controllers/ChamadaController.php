@@ -28,4 +28,17 @@ class ChamadaController extends Controller
         'EnsaioController@show', ['id' => $id]
       );
     }
+
+    public function destroy($id, $ensaio_id)
+    {
+
+        $chamada = Chamada::find($id);
+        $chamada->delete();
+
+        // return redirect()->action(
+        //   'EnsaioController@show', ['id' => $ensaio_id]
+        // );
+
+        return redirect('ensaios');
+    }
 }

@@ -15,6 +15,7 @@
                     <th>Avatar</th>
                     <th>Corista</th>
                     <th>Naipe</th>
+                    <th>Ação</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,16 @@
                 <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
                 <td>{{ $pessoa->name }}</td>
                 <td>{{ $pessoa->coristas->naipes->naipe }}</td>
+                <td>
+                    <span>
+                        <form style='display:inline;' action="{{ url('/chamadas', ['id' => $pessoa->coristas->chamadas]) }}" method="post">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button class="btn btn-link" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
+                            {!! csrf_field() !!}
+                            
+                        </form>
+                    </span>
+                </td>
                 </tr>
                 @endforeach
                 </tbody>
