@@ -47,7 +47,7 @@ class EnsaioController extends Controller
 
         $adicionaveis = DB::select($sql, ['id' => $id]);
 
-        //dd($pessoas->coristas->chamadas);
+        //dd($pessoas[0]->coristas->chamadas);
 
         return view('ensaio.show', compact('ensaio', 'coristas', 'adicionaveis', 'pessoas', 'naipes'));
 

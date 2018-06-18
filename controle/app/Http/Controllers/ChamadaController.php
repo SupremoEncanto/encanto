@@ -29,16 +29,17 @@ class ChamadaController extends Controller
       );
     }
 
-    public function destroy($id, $ensaio_id)
+    public function destroy(Request $request)
     {
 
-        $chamada = Chamada::find($id);
+        $chamada = Chamada::where('corista_id', $request->corista_id)
+        ->where('ensaio_id', $request->ensaio_id);
         $chamada->delete();
 
-        // return redirect()->action(
-        //   'EnsaioController@show', ['id' => $ensaio_id]
-        // );
+        return redirect()->action(
+          'EnsaioController@show', ['id' => $request->ensaio_id]
+        );
 
-        return redirect('ensaios');
+        //return redirect('ensaios');
     }
 }

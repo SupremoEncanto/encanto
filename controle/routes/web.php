@@ -9,6 +9,7 @@ Route::resource('pessoas', 'PessoaController');
 Route::resource('coristas', 'CoristaController');
 
 Route::post('chamadas', 'ChamadaController@store');
+Route::delete('chamadas', 'ChamadaController@destroy');
 
 
 Route::get('/resources/assets/img/{filename}', function($filename){
