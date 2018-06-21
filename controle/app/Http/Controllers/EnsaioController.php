@@ -33,6 +33,7 @@ class EnsaioController extends Controller
             ->join('ensaios', 'chamadas.ensaio_id', '=', 'ensaios.id')
             ->select('pessoas.*', 'naipes.naipe')
             ->where('ensaios.id', $id)
+            ->orderBy('pessoas.name', 'ASC')
             ->get();
               
         $sql = 'SELECT pessoa.*, corista.id corista_id '
