@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Input;
 
 class EnsaioController extends Controller
 {
+
+    public function __construct()
+      {
+          $this->middleware('auth');
+      }
+
     public function index ()
     {
 

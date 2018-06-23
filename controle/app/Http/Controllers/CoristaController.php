@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Input;
 
 class CoristaController extends Controller
 {
+
+    public function __construct()
+      {
+          $this->middleware('auth');
+      }
+      
     public function index ()
     {
 
@@ -30,22 +36,6 @@ class CoristaController extends Controller
     {
       return view('corista.show', compact('corista'));
     }
-
-    // public function create ()
-    // {
-
-    //   $naipes = Naipe::all()->toArray();
-    //   $naipe_associativo = [];
-    //   foreach($naipes as $indice => $naipe)
-    //   {
-
-    //     $naipe_associativo[$naipe['id']] = $naipe['naipe']; 
-
-    //   }
-
-    //   return view('corista.create', compact('naipes'));
-
-    // }
 
     public function store (CoristaRequest $requisicao)
     {
