@@ -7042,3 +7042,11 @@ ul.chats li.out .message {
   border-radius: 0px !important;
   border: 1px solid #e5e5e5;
 }
+
+.login {
+  color: #fff;
+  line-height: 4rem;
+  margin-right: 2rem;
+  font-size: 1.5rem;
+}
+

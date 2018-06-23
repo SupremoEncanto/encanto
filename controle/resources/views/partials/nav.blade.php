@@ -9,16 +9,19 @@
             <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Pesquisar..." class="form-control text-white"/></div>
         </form>
         <ul class="nav navbar navbar-top-links navbar-right mbn">
-            
-            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="{{URL::asset('resources/assets/img/')}}/{{ Auth::user() }}" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Tulio Macedo</span>&nbsp;<span class="caret"></span></a>
+            @if (Auth::guest())
+                <a class="login" href="{{ route('login') }}">Login</a>
+            @else
+            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="{{URL::asset('resources/assets/img/')}}/{{ Auth::user()->pessoa_id }}.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">{{ Auth::user()->pessoa_id }}</span>&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-user pull-right">
                     <li><a href="#"><i class="fa fa-user"></i>Meu Perfil</a></li>
                     
                     <li class="divider"></li>
                     
-                    <li><a href="Login.html"><i class="fa fa-key"></i>Sair</a></li>
+                    <li><a href="/logout"><i class="fa fa-key"></i>Sair</a></li>
                 </ul>
             </li>
+            @endif
         </ul>
     </div>
 </nav>
