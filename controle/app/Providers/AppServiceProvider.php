@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 use Carbon\Carbon;
 
@@ -20,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         //Carbon::setLocale(\Config::get('app.locale'));
         Carbon::setLocale('pt_BR');
         //Carbon::setLocale($this->app->getLocale());
+        Schema::defaultStringLength(191);
     }
 
     /**
