@@ -5,7 +5,7 @@
 @section('content')
 @include('corista._create')
 
-<div class="col-lg-12">
+<div class="col-lg-12 panel-base">
     <div class="panel panel-grey">
         <div class="panel-heading">Lista dos Coristas <span class="pull-right"><a class="text-blue" type="button" data-toggle="modal" data-target="#coristaCreate"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
@@ -46,8 +46,7 @@
                 </tbody>
             </table>
             @include('errors.list')
-        </div>
+        </div>  
     </div>
 </div>
-@include('corista.script')
 @endsection

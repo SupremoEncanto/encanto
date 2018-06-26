@@ -1179,7 +1179,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f7', end
 }
 /* End Left Sidebar Collapsed */
 .page-content {
-  padding: 20px 20px 50px 20px;
+  padding: 20px 20px 80px 20px;
   min-height: 700px;
 }
 #footer {
@@ -7050,3 +7050,6 @@ ul.chats li.out .message {
   font-size: 1.5rem;
 }
 
+.panel-base {
+  padding-bottom: 32px;
+}

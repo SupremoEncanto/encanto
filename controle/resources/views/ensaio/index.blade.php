@@ -3,7 +3,7 @@
 @section('title', 'Ensaios')
 
 @section('content')
-<div class="col-lg-12">
+<div class="col-lg-12 panel-base">
     <div class="panel panel-grey">
         <div class="panel-heading">Lista dos Ensaios <span class="pull-right"><a class="text-blue" href="ensaios/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
