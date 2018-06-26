@@ -22,7 +22,7 @@ class EnsaioController extends Controller
     public function index ()
     {
 
-      $ensaios = Ensaio::with('chamadas')->latest()->get();
+      $ensaios = Ensaio::with('chamadas')->orderBy('ensaios.date', 'DESC')->get();
 
       return view('ensaio.index', compact('ensaios'));
     }
