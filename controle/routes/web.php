@@ -30,3 +30,5 @@ Route::get('/resources/assets/img/{filename}', function($filename){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/construcao', 'HomeController@construcao')->name('construcao');
+
