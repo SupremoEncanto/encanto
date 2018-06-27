@@ -13,8 +13,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <div class="alert alert-success">
+                    @if (Auth::guest())
+                    
+                    Você saiu com sucesso!!
+                    @else
+                    Você entrou com sucesso!!
+                    @endif
+                    </div>
                 </div>
             </div>
         </div>
