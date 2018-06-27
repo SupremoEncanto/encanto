@@ -14,7 +14,7 @@
             @else
             <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="{{URL::asset('resources/assets/img/')}}/{{ Auth::user()->pessoa_id }}.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">{{ Auth::user()->pessoa_id }}</span>&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-user pull-right">
-                    <li><a href="#"><i class="fa fa-user"></i>Meu Perfil</a></li>
+                    <li><a href="/construcao"><i class="fa fa-user"></i>Meu Perfil</a></li>
                     
                     <li class="divider"></li>
                     

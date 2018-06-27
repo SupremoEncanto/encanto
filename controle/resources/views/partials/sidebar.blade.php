@@ -23,7 +23,7 @@ data-position="right" class="navbar-default navbar-static-side">
     </i><span class="menu-title">Ensaios</span></a>
 
     </li>
-    <li {{{ (Request::is('financas') ? 'class=active' : '') }}}><a href="#"><i class="fa fa-money fa-fw">
+    <li {{{ (Request::is('financas') ? 'class=active' : '') }}}><a href="/construcao"><i class="fa fa-money fa-fw">
         <div class="icon-bg bg-orange"></div>
     </i><span class="menu-title">Finanças</span></a>
        
