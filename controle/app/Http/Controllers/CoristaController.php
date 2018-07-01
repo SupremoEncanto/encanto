@@ -21,7 +21,7 @@ class CoristaController extends Controller
     public function index ()
     {
 
-      $coristas = Corista::with('pessoas', 'naipes')->get();
+      $coristas = Corista::with('pessoas', 'naipes')->paginate(5);
 
       $cadastrados = Corista::pluck('pessoa_id');
 

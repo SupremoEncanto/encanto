@@ -22,7 +22,7 @@ class EnsaioController extends Controller
     public function index ()
     {
 
-      $ensaios = Ensaio::with('chamadas')->orderBy('ensaios.date', 'DESC')->get();
+      $ensaios = Ensaio::with('chamadas')->orderBy('ensaios.date', 'DESC')->paginate(5);
 
       return view('ensaio.index', compact('ensaios'));
     }
@@ -40,7 +40,7 @@ class EnsaioController extends Controller
             ->select('pessoas.*', 'naipes.naipe')
             ->where('ensaios.id', $id)
             ->orderBy('pessoas.name', 'ASC')
-            ->get();
+            ->paginate(5);
               
         $sql = 'SELECT pessoa.*, corista.id corista_id '
              . 'FROM pessoas pessoa ' 
