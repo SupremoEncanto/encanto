@@ -45,6 +45,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{ $ensaios->links() }}
         </div>
     </div>
 </div>    
