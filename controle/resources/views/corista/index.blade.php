@@ -45,6 +45,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{ $coristas->links() }}
             @include('errors.list')
         </div>  
     </div>
