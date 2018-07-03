@@ -22,7 +22,11 @@
                 <tbody>
                 @foreach ($pessoas as $pessoa) 
                 <tr>
+                    @if ($pessoa->avatar)
                     <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
+                    @else
+                    <td><i class="fa fa-user fa-fw"></i></td>
+                    @endif
                     <td>
                         <a href="{{ url('/pessoas', $pessoa->id) }}">{{ $pessoa->name }}</a>
                     </td>
