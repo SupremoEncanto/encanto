@@ -5,7 +5,7 @@
 @section('content')
 <div class="col-lg-12 panel-base">
     <div class="panel panel-grey">
-        <div class="panel-heading">Lista das Pessoas <span class="pull-right"><a class="text-blue" href="pessoas/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
+        <div class="panel-heading">Lista das Pessoas <span class="label">{{ $pessoas->total() . " ocorrência(s)" }}</span><span class="pull-right"><a class="text-blue" href="pessoas/create"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
@@ -20,7 +20,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($pessoas as $pessoa) 
+                @foreach ($pessoas as $pessoa)
                 <tr>
                     <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
                     <td>
@@ -36,7 +36,7 @@
                                 <input type="hidden" name="_method" value="delete" />
                                 <button class="btn btn-link" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
                                 {!! csrf_field() !!}
-                                
+
                             </form>
                             <a href="pessoas/{{$pessoa->id}}/edit"><span class="text-blue"><i class="fa fa-edit"></i></span></a>
                         </span>
@@ -48,5 +48,5 @@
             {{ $pessoas->links() }}
         </div>
     </div>
-</div>    
+</div>
 @endsection

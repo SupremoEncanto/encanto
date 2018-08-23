@@ -7,7 +7,7 @@
 
 <div class="col-lg-12 panel-base">
     <div class="panel panel-grey">
-        <div class="panel-heading">Lista dos Coristas <span class="pull-right"><a class="text-blue" type="button" data-toggle="modal" data-target="#coristaCreate"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
+        <div class="panel-heading">Lista dos Coristas <span class="label">{{ $coristas->total() . " ocorrência(s)" }}</span><span class="pull-right"><a class="text-blue" type="button" data-toggle="modal" data-target="#coristaCreate"><i class="fa fa-plus"></i></a>&nbsp;&nbsp;</span></div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
@@ -21,7 +21,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($coristas as $corista) 
+                @foreach ($coristas as $corista)
                 <tr>
                     <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $corista->pessoas->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
                     <td>
@@ -47,7 +47,7 @@
             </table>
             {{ $coristas->links() }}
             @include('errors.list')
-        </div>  
+        </div>
     </div>
 </div>
 @endsection
