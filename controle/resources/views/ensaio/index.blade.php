@@ -39,6 +39,7 @@
 
                         </form>
                         <a href="ensaios/{{$ensaio->id}}/edit"><span class="text-blue"><i class="fa fa-edit"></i></span></a>
+                        <a href="{{ url('/ensaios', $ensaio->id) }}"><span class="text-blue">&nbsp; <i class="fa fa-plus"></i></span></a>
                     </span>
                 </td>
                 </tr>
