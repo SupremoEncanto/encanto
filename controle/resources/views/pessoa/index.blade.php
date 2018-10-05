@@ -12,7 +12,6 @@
                 <tr>
                     <th>Avatar</th>
                     <th>Nome</th>
-                    <th>Ramal</th>
                     <th>E-mail</th>
                     <th>Setor</th>
                     <th>Aniversário</th>
@@ -26,7 +25,6 @@
                     <td>
                         <a href="{{ url('/pessoas', $pessoa->id) }}">{{ $pessoa->name }}</a>
                     </td>
-                    <td>{{  $pessoa->ramal  }}</td>
                     <td>{{  $pessoa->email  }}</td>
                     <td>{{  $pessoa->setor  }}</td>
                     <td>{{  $pessoa->aniversario  }}</td>
