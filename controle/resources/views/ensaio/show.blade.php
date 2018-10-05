@@ -21,7 +21,7 @@
                 <tbody>
                 @foreach ($pessoas as $pessoa) 
                 <tr>
-                <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle" style="width:36px;height:36px;"/></td>
+                <td><img src="{{URL::asset('resources/assets/img/')}}/{{ $pessoa->avatar }}" alt="" class="img-responsive avatar img-circle"/></td>
                 <td>{{ $pessoa->name }}</td>
                 <td>{{ $pessoa->coristas->naipes->naipe }}</td>
                 <td>
