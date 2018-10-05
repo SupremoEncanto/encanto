@@ -1188,6 +1188,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f7', end
   bottom: 0px;
   padding: 15px 20px;
   background: #FFFFFF;
+  z-index: 3;
 }
 #theme-setting {
   position: fixed;
