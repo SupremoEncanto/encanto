@@ -23,13 +23,15 @@ class CoristaController extends Controller
 
       $coristas = Corista::with('pessoas', 'naipes')->paginate(5);
 
+      $coristas_ativos = Corista::where('left_on', '=', null)->count();
+
       $cadastrados = Corista::pluck('pessoa_id');
 
       $voz = Naipe::pluck('naipe', 'id');
 
       $pessoas = Pessoa::whereNotIn('id', $cadastrados)->get();
 
-      return view('corista.index', compact('coristas', 'pessoas', 'voz'));
+      return view('corista.index', compact('coristas', 'coristas_ativos', 'pessoas', 'voz'));
     }
 
     public function show (Corista $corista)
