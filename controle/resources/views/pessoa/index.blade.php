@@ -34,9 +34,8 @@
                         <span>
                             <form style='display:inline;' action="{{ url('/pessoas', ['id' => $pessoa->id]) }}" method="post">
                                 <input type="hidden" name="_method" value="delete" />
-                                <button class="btn btn-link" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
+                                <button class="btn btn-link acao" type="submit"><span class="text-red"><i class="fa fa-times"></i></span></button>
                                 {!! csrf_field() !!}
-
                             </form>
                             <a href="pessoas/{{$pessoa->id}}/edit"><span class="text-blue"><i class="fa fa-edit"></i></span></a>
                         </span>

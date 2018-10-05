@@ -7057,3 +7057,14 @@ ul.chats li.out .message {
 .construcao {
   text-align: center;
 }
+
+.avatar {
+  width: 48px;
+  height: 48px;;
+}
+
+.acao {
+  position: relative;
+  top: -3px;
+  left: 3px;
+}
